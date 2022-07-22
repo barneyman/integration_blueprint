@@ -3,9 +3,10 @@
 	"image": "ghcr.io/ludeeus/devcontainer/integration:stable",
 	"name": "Blueprint integration development",
 	"context": "..",
-	"appPort": [
-		"9123:8123"
-	],
+	// "appPort": [
+	// 	"9123:8123"
+	// ],
+	//"mounts": ["source=${localWorkspaceFolder}/custom_components,target=/config/custom_components,type=bind,consistency=cached"],
 	"postCreateCommand": "container install",
 	"extensions": [
 		"ms-python.python",
@@ -26,5 +27,6 @@
 		"editor.formatOnSave": true,
 		"editor.formatOnType": true,
 		"files.trimTrailingWhitespace": true
-	}
+	},
+	"runArgs": ["--net=host"]
 }
